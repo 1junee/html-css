@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- form: 입력한 값을 서버로 보내는 양식 -->
+    <!-- action: 데이터를 보낼 주소 (비워두면 현재 페이지 주소로 보냄) -->
+    <!--   https://... => 전체 주소로 요청 -->
+    <!--   create      => 현재 주소의 제일 마지막만 바꿔서 요청 (상대 경로) -->
+    <!--   /create     => 루트주소/create 로 요청 (절대 경로) -->
+    <!-- method: 보내는 방식
+          get  => 주소창 뒤에 ?title=값&content=값 형태로 붙여서 보냄 (눈에 보임)
+          post => 요청 본문에 담아서 보냄 (주소창에 안 보임, 글 작성/로그인에 주로 사용) -->
+    <form action="" method="get">
+        <h1>
+            <!-- label: 입력칸 이름표. for 값 = input의 id 값 → 글자 클릭해도 입력칸 선택됨 -->
+            <label for="title">제목</label>
+            <!-- input: 입력칸
+                 type=입력 종류(text, number, password, email ...)
+                 name=서버로 보낼 때 이름표 (title=입력값 으로 전송)
+                 id=label 연결/CSS용
+                 required=비어 있으면 제출 안 됨 -->
+            <input type="text" name="title" id="title" required>
+        </h1>
+        <label for="content">내용</label>
+        <!-- 긴 글은 <textarea>가 더 적합 (여러 줄 입력 가능) -->
+        <input type="text" name="content" id="content" required>
+
+        <label for="rating">평점</label>
+        <!-- type="number": 숫자만 입력 가능 (min, max 속성으로 범위 제한 가능) -->
+        <!-- 서버에는 name 기준으로 전송 → number=값 (id인 rating이 아님!) -->
+        <input type="number" name="number" id="rating" required>
+
+        <!-- 제출 버튼: 누르면 form 안의 값들을 action 주소로 보냄 -->
+        <p><input type="submit"></p>
+    </form>
+    <!-- /board => 루트주소/board 로 이동 (지금은 파일로 열어서 해당 페이지 없음) -->
+    <a href="/board">전체 게시판</a>
+
+</body>
+</html>

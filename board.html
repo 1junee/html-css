@@ -1,0 +1,61 @@
+<!DOCTYPE html> <!-- 이 문서는 HTML5 문서라고 브라우저에 알림 -->
+<html lang="en"> <!-- lang: 페이지 언어 (한국어 페이지면 "ko"가 정확) -->
+<head>
+    <!-- head: 화면에 안 보이는 정보 (설정, 제목, 외부 파일 연결) -->
+    <meta charset="UTF-8"> <!-- 글자 인코딩: 한글 안 깨지게 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 모바일에서 화면 폭에 맞춤 -->
+    <title>Document</title> <!-- 브라우저 탭에 뜨는 제목 -->
+    <!-- 외부 CSS 파일 연결 (rel=관계, href=파일 경로) -->
+    <link rel="stylesheet" href="mycss.css">
+</head>
+<body>
+    <!-- body: 실제 화면에 보이는 내용 -->
+
+    <!-- 태그 기본 구조: <태그이름 속성1="값1" 속성2="값2"> 내용 </태그이름> -->
+    <!-- 여는 태그 / 닫는 태그(/ 붙음) 짝을 맞춰야 함. img처럼 내용 없는 태그는 닫는 태그 없음 -->
+
+    <!-- h1~h6: 제목 태그. 숫자가 작을수록 크고 중요한 제목 -->
+    <h1>제목</h1>
+    <h2>부제목</h2>
+    <h3>소제목</h3>
+    <!-- p: 문단(paragraph) -->
+    <p>태그는 필요할 때 검색해서 사용하는 게 정확</p>
+
+    <!-- 크롬이 모르는 태그지만 에러 없이 처리는 함 (그냥 인라인 요소처럼 글자만 보여줌) -->
+    <!-- → HTML은 틀려도 에러를 안 띄우니 오타 주의 -->
+    <asdf>hi</asdf>
+
+    <!-- 내가 원하는 기능으로 묶기; 시맨틱 태그 -->
+    <!-- 시맨틱 태그: 이름 자체에 의미가 있는 태그 (header, main, footer, nav, section, article ...) -->
+    <!-- 화면상으론 div와 똑같지만, 코드 읽기 쉽고 검색엔진/스크린리더가 구조를 이해함 -->
+    <header>
+        <!-- 블록 요소: 한 줄을 통째로 차지 → 다음 요소는 아래 줄로 (h1, p, div ...) -->
+        <h1>게시판</h1>
+
+        <!-- 인라인 요소: 내용 크기만큼만 차지 → 옆으로 나란히 (a, b, span, img ...) -->
+        <!-- a: 링크. href=이동할 주소, target="_blank"=새 탭에서 열기 -->
+        <a href="write.html" target="_blank">글작성</a>
+    </header>
+
+    <!-- main: 페이지의 핵심 내용 (페이지당 하나) -->
+    <main>
+        <!-- div: 의미 없는 묶음 상자(블록). class를 붙여 CSS로 꾸밈 -->
+        <!-- class는 여러 요소에 같은 이름 사용 가능 → .post 스타일이 두 게시물에 모두 적용 -->
+        <div class="post">
+            <h2>첫 게시물</h2>
+            <p>첫 글입니다!!</p>
+        </div>
+        <div class="post">
+            <!-- b: 굵은 글씨(인라인). id는 문서 안에서 딱 하나만 → #lunch로 이것만 꾸밈 -->
+            <h2>오늘 <b id="lunch">점심</b> 뭐먹을까요?</h2>
+            <!-- img: 이미지 (닫는 태그 없음)
+                 src=이미지 주소, alt=이미지 못 불러올 때 대신 보일 글 / 스크린리더용 설명
+                 width/height=크기(px)
+                 → 유연하게 하려면 CSS에서 max-width: 100%; height: auto; (mycss.css의 .post img 참고)
+                 → width/height 속성은 지우지 말 것: 로딩 전 자리를 미리 잡아 화면 덜컹임 방지 -->
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9OEpBkVQ04XYMf6vkMjWyMDhN0OM0tdO3qcrwgbq71Wcym72ppO_H-5K2&s=10" alt="??" width="500" height="300"/>
+            <p>추천 좀 해주세요</p>
+        </div>
+    </main>
+</body>
+</html>
